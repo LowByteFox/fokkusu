@@ -7,4 +7,6 @@ fi
 
 fasm main.s
 
-qemu-system-x86_64 -drive file=./main.bin,format=raw
+if [[ "$@" =~ "run" ]]; then
+	qemu-system-x86_64 -drive file=./main.bin,format=raw
+fi
