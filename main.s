@@ -10,11 +10,15 @@ include "macros.s"
 
 start:
 	print welcome
+	jmp stop
 
 ; STD
 include "std/print.s"
 
 welcome db "Kon kon Fokkusu!", 0
+
+stop:
+	hlt
 
 times 510-($-$$) db 0
 dw 0xaa55
